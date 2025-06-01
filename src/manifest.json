@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Github Translation",
+  "short_name": "Github To CN",
+  "description": "Github中文翻译",
+  "version": "1.0",
+  "homepage_url": "https://github.com/YX916/GithubTranslation",
+  "author": "YYX",
+  "icons": {
+    "16": "img/icon-16.png",
+    "32": "img/icon-32.png",
+    "48": "img/icon-48.png",
+    "128": "img/icon-128.png"
+  },
+  "background": {
+    "service_worker": "js/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://github.com/*"
+      ],
+      "js": [
+        "js/translation.js"
+      ],
+      "run_at": "document_end",
+      "all_frames": true
+    }
+  ]
+}

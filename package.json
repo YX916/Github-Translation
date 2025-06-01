@@ -1,0 +1,22 @@
+{
+  "name": "github-translation",
+  "version": "1.0.0",
+  "description": "Github翻译拓展",
+  "license": "MIT",
+  "author": {
+    "name": "YYX",
+    "email": "3271310698@qq.com"
+  },
+  "type": "module",
+  "main": "publish.js",
+  "scripts": {
+    "publish": "node publish.js"
+  },
+  "devDependencies": {
+    "@plasmo-corp/ewu": "^0.6.0"
+  },
+  "dependencies": {
+    "compressing": "^1.10.3",
+    "dotenv": "^16.5.0"
+  }
+}
