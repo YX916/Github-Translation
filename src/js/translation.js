@@ -4,6 +4,47 @@ const TranslationData = [
   [`Projects`, `项目`],
   [`Packages`, `包`],
   [`Stars`, `收藏`],
+  [`follower`, `\t关注者`],
+  [`following`, `\t正在关注`],
+  [`Organizations`, `组织`],
+  [`Popular repositories`, `热门仓库`],
+  [`Customize your pins`, `自定义你的收藏`],
+  [`{0} contributions in the last year`, `过去一年内的 {0} 次贡献`],
+  [`Contribution settings`, `贡献设置`],
+  [`Private contributions`, `私有贡献`],
+  [`Turning on private contributions will show anonymized private activity on your profile.`, `开启私有贡献将会在你的个人资料上显示匿名的私有活动。`],
+  [`Activity overview`, `活动概览`],
+  [`Turning on the activity overview will show an overview of your activity across organizations and repositories.`, `开启活动概览将会显示你在组织和仓库中的活动概览。`],
+  [`Learn how we count contributions`, `了解我们如何计算贡献`],
+  [`Contribution activity`, `贡献活动`],
+  [`Created {1} commits in {0} repository`, `在 {0} 个仓库中创建了 {1} 次提交`],
+  [``],
+  [``],
+  [``],
+  [``],
+  [``],
+  [``],
+  [``],
+  [``],
+  [``],
+  [``],
+  [``],
+  [``],
+  [``],
+  [``],
+  [``],
+  [``],
+  [``],
+  [``],
+  [``],
+  [``],
+  [``],
+  [``],
+  [``],
+  [``],
+  [``],
+  [``],
+  [``],
 
   [`Sort`, `排序`],
   [`Sort by`, `排序方式`],
@@ -430,6 +471,10 @@ function createPlaceholderPattern (str) {
 
 // 处理占位符的函数
 function replacePlaceholders (translated, original, matches) {
+  console.log('translated', translated);
+  console.log('original', original);
+  console.log('matches', matches);
+
   return translated.replace(/{(\d+)}/g, (match, index) => {
     return matches[parseInt(index) + 1] || match;
   });
@@ -450,6 +495,8 @@ function buildTranslationMap () {
     // 包含占位符的字符串，创建正则表达式模式
     else {
       const pattern = createPlaceholderPattern(key);
+      console.log('Creating pattern for:', key, '->', pattern);
+
       patterns.push({ pattern, translation: val });
     }
   });
